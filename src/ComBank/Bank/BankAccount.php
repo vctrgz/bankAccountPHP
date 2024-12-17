@@ -30,7 +30,7 @@ class BankAccount implements BankAccountInterface
     function transaction (BankTransactionInterface $parametro) {
         $this->balance += $parametro->getDeposit();
         if ($this->balance - $parametro->getWithdraw() < $this->getOverdraft()->getOverdraft()) {
-            echo "Error, cannot complete transaction because of amount is exceding overdraft";
+            throw new FailedTransactionException("Cannot complete transaction because of amount is exceding overdraft");            
         }else {
             $this->balance -= $parametro->getWithdraw();
         }
