@@ -52,6 +52,7 @@ class BankAccount implements BankAccountInterface
             echo "Account is already open<br>";
         }else if ($this->status === self::STATUS_CLOSED) {
             $this->status = self::STATUS_OPEN;
+            echo $this->status."<br>";
         }
     }
     function closeAccount() : void {
@@ -59,6 +60,7 @@ class BankAccount implements BankAccountInterface
             echo "Account is already closed<br>";
         }else if ($this->status === self::STATUS_OPEN) {
             $this->status = self::STATUS_CLOSED;
+            echo $this->status."<br>";
         }
     }
     function getBalance() : float {

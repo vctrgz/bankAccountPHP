@@ -101,7 +101,8 @@ try {
 pl('My new balance after withdrawal (-20) with funds : ' . $bankAccount2->getBalance());
 
 try {
-   
+   $bankAccount2->closeAccount();
+   $bankAccount2->closeAccount();
 } catch (BankAccountException $e) {
     pl($e->getMessage());
 }
